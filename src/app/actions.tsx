@@ -11,8 +11,7 @@ export async function createTodoAction(formData: FormData) {
     revalidatePath("/");
 }
 
-export async function deleteTodoAction(formData: FormData) {
-    const id = parseInt(formData.get("id") as string);
+export async function deleteTodoAction(id: number) {
     await db.delete(todos).where(eq(todos.id, id));
     revalidatePath("/");
 }
