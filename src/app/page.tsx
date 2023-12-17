@@ -1,6 +1,7 @@
 import { unstable_cache, unstable_noStore } from "next/cache";
 import { createTodoAction, deleteTodoAction } from "./actions";
 import { getAllTodos } from "data-access/todos";
+import { SubmitButton } from "./submit-button";
 
 export default async function Home() {
   unstable_noStore();
@@ -17,7 +18,7 @@ export default async function Home() {
       </ul>
       <form action={createTodoAction}>
         <input name="text" className="text-black" />
-        <button>Create Todo</button>
+        <SubmitButton />
       </form>
     </main>
   )
