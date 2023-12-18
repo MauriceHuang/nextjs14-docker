@@ -20,17 +20,46 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## initiating drizzle DB
+```zsh
+npx drizzle-kit push:pg
+```
+it should return the following:
+```zsh
+drizzle-kit: v0.20.6
+drizzle-orm: v0.29.1
 
-To learn more about Next.js, take a look at the following resources:
+No config path provided, using default path
+Reading config file '/Users/{your directory}/drizzle.config.ts'
+[i] No changes detected
+```
+```zsh
+npx drizzle-kit studio                                                                                                                       ─╯
+drizzle-kit: v0.20.6
+drizzle-orm: v0.29.1
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+No config path provided, using default path
+Reading config file '/Users/{your directory}/drizzle.config.ts'
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+[Warning] Drizzle Studio is currently in Beta. If you find anything that is not working as expected or should be improved, feel free to create an issue on GitHub: https://github.com/drizzle-team/drizzle-kit-mirror/issues/new or write to us on Discord: https://discord.gg/WcRKz2FFxN
 
-## Deploy on Vercel
+Drizzle Studio is up and running on https://local.drizzle.studio
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## initiating DB in terminal
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```zsh
+psql postgres
+```
+
+```psql
+psql (14.10 (Homebrew))
+Type "help" for help.
+
+postgres=# \dt
+         List of relations
+ Schema | Name  | Type  |  Owner
+--------+-------+-------+----------
+ public | todos | table | postgres
+(1 row)
+```
